@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA17DE82-1706-4252-9984-59399A702D77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cell.Interface</RootNamespace>
+    <AssemblyName>Cell.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="halcondotnet, Version=21.5.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WPF 控件\MilepostFormApp\DevDll\Halcon\X64\halcondotnet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IDataPool.cs" />
+    <Compile Include="IPlatCfgUIProvider.cs" />
+    <Compile Include="IPlatCmdWork.cs" />
+    <Compile Include="IPlatDevice.cs" />
+    <Compile Include="IPlatDevice_Barcode.cs" />
+    <Compile Include="IPlatDevice_LineScan.cs" />
+    <Compile Include="IPlatDevice_Camera.cs" />
+    <Compile Include="IPlatDevice_MotionDaq.cs" />
+    <Compile Include="IPlatErrCodeMsg.cs" />
+    <Compile Include="IPlatInitializable.cs" />
+    <Compile Include="IPlatMainStation.cs" />
+    <Compile Include="IPlatModule_AIO.cs" />
+    <Compile Include="IPlatModule_CmprTrg.cs" />
+    <Compile Include="IPlatModule_DIO.cs" />
+    <Compile Include="IPlatModule_Motion.cs" />
+    <Compile Include="IPlatOrder.cs" />
+    <Compile Include="IPlatRealtimeUIProvider.cs" />
+    <Compile Include="IPlatStation.cs" />
+    <Compile Include="IPlat_Image.cs" />
+    <Compile Include="IStationMsgReceiver.cs" />
+    <Compile Include="MyCustomAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UcRealTimeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cell.DataModel\Cell.DataModel.csproj">
+      <Project>{9983A327-EB0D-458C-812A-3D299F181F61}</Project>
+      <Name>Cell.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tissue.UI\Tissue.UI.csproj">
+      <Project>{8CA1A42A-3F8A-49B2-958C-45D4235FAB5C}</Project>
+      <Name>Tissue.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

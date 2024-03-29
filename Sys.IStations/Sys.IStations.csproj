@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3FBE6934-6B9E-4243-B922-BB12FFC920EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sys.IStations</RootNamespace>
+    <AssemblyName>Sys.IStations</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="halcondotnet, Version=21.5.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DevDll\Halcon\X64\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppDataPool.cs" />
+    <Compile Include="AppDevCellNameManeger.cs" />
+    <Compile Include="AppDevChannel.cs" />
+    <Compile Include="AppHubCenter.cs" />
+    <Compile Include="AppInitorManager.cs" />
+    <Compile Include="AppIplatinitHelper.cs" />
+    <Compile Include="FormAddNames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddNames.Designer.cs">
+      <DependentUpon>FormAddNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStationBaseAxisPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStationBaseAxisPanel.Designer.cs">
+      <DependentUpon>FormStationBaseAxisPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStationBaseCfg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStationBaseCfg.Designer.cs">
+      <DependentUpon>FormStationBaseCfg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStationBaseDioPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStationBaseDioPanel.Designer.cs">
+      <DependentUpon>FormStationBaseDioPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ICmdWorkBase.cs" />
+    <Compile Include="IStationBase.cs" />
+    <Compile Include="AppStationManager.cs" />
+    <Compile Include="ProHipStation\GrabStation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UcAxisStatusByName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcAxisStatusByName.Designer.cs">
+      <DependentUpon>UcAxisStatusByName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcChnNamesInStation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcChnNamesInStation.Designer.cs">
+      <DependentUpon>UcChnNamesInStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcSimpleAxisInStation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSimpleAxisInStation.Designer.cs">
+      <DependentUpon>UcSimpleAxisInStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcStationBaseSPAliasEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcStationBaseSPAliasEdit.Designer.cs">
+      <DependentUpon>UcStationBaseSPAliasEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcStationDevChnNameMapping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcStationDevChnNameMapping.Designer.cs">
+      <DependentUpon>UcStationDevChnNameMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcStationRealtimeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcStationRealtimeUI.Designer.cs">
+      <DependentUpon>UcStationRealtimeUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcStationRealTimeUIDebug.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcStationRealTimeUIDebug.Designer.cs">
+      <DependentUpon>UcStationRealTimeUIDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcStationWorkPositionCfg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcStationWorkPositionCfg.Designer.cs">
+      <DependentUpon>UcStationWorkPositionCfg.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cell.DataModel\Cell.DataModel.csproj">
+      <Project>{9983A327-EB0D-458C-812A-3D299F181F61}</Project>
+      <Name>Cell.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cell.IconFont\Cell.IconFont.csproj">
+      <Project>{396A8904-66CC-46D5-AC03-2C3B5E86DECD}</Project>
+      <Name>Cell.IconFont</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cell.Interface\Cell.Interface.csproj">
+      <Project>{ea17de82-1706-4252-9984-59399a702d77}</Project>
+      <Name>Cell.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cell.Tools\Cell.Tools.csproj">
+      <Project>{FCA66B83-64BD-4AA8-AFF2-CE7ADA6E85A1}</Project>
+      <Name>Cell.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cell.UI\Cell.UI.csproj">
+      <Project>{5EE2EB44-B10D-425A-958C-2F33B1A893A8}</Project>
+      <Name>Cell.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Org.IBarcode\Org.IBarcode.csproj">
+      <Project>{294D89E0-4EF7-4CE5-A0C7-E1DFA662C3BD}</Project>
+      <Name>Org.IBarcode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Org.ICamera\Org.ICamera.csproj">
+      <Project>{25E4D979-3E67-498C-93C0-45B1D2178AC2}</Project>
+      <Name>Org.ICamera</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Org.ILineScan\Org.ILineScan.csproj">
+      <Project>{b4a9fd3d-80f5-4dcc-9883-c258f735f7de}</Project>
+      <Name>Org.ILineScan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Org.IMotionDaq\Org.IMotionDaq.csproj">
+      <Project>{75F342CF-B01D-401A-8772-DB63F6ABE5E8}</Project>
+      <Name>Org.IMotionDaq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tissue.UI\Tissue.UI.csproj">
+      <Project>{8CA1A42A-3F8A-49B2-958C-45D4235FAB5C}</Project>
+      <Name>Tissue.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormAddNames.resx">
+      <DependentUpon>FormAddNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStationBaseAxisPanel.resx">
+      <DependentUpon>FormStationBaseAxisPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStationBaseCfg.resx">
+      <DependentUpon>FormStationBaseCfg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStationBaseDioPanel.resx">
+      <DependentUpon>FormStationBaseDioPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcAxisStatusByName.resx">
+      <DependentUpon>UcAxisStatusByName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcChnNamesInStation.resx">
+      <DependentUpon>UcChnNamesInStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcSimpleAxisInStation.resx">
+      <DependentUpon>UcSimpleAxisInStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcStationDevChnNameMapping.resx">
+      <DependentUpon>UcStationDevChnNameMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcStationRealtimeUI.resx">
+      <DependentUpon>UcStationRealtimeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcStationRealTimeUIDebug.resx">
+      <DependentUpon>UcStationRealTimeUIDebug.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

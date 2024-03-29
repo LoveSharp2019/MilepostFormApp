@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4A9FD3D-80F5-4DCC-9883-C258F735F7DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Org.ILineScan</RootNamespace>
+    <AssemblyName>Org.ILineScan</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cell.IconFont">
+      <HintPath>..\Cell.IconFont\bin\Debug\Cell.IconFont.dll</HintPath>
+    </Reference>
+    <Reference Include="GoSdkNet">
+      <HintPath>..\DevDll\LMI25x\GoSdkNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="halcondotnet">
+      <HintPath>..\DevDll\Halcon\X64\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="kApiNet">
+      <HintPath>..\DevDll\LMI25x\kApiNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ILineScanHelper.cs" />
+    <Compile Include="IPlatLineScan_Base.cs" />
+    <Compile Include="lmi25x\IPlatImage_Lmi25x.cs" />
+    <Compile Include="lmi25x\IPlatLineScan_Lmi25x.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Uc_RealTimeLineScan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_RealTimeLineScan.Designer.cs">
+      <DependentUpon>Uc_RealTimeLineScan.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Uc_RealTimeLineScan.resx">
+      <DependentUpon>Uc_RealTimeLineScan.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cell.DataModel\Cell.DataModel.csproj">
+      <Project>{9983A327-EB0D-458C-812A-3D299F181F61}</Project>
+      <Name>Cell.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cell.Interface\Cell.Interface.csproj">
+      <Project>{EA17DE82-1706-4252-9984-59399A702D77}</Project>
+      <Name>Cell.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cell.Tools\Cell.Tools.csproj">
+      <Project>{FCA66B83-64BD-4AA8-AFF2-CE7ADA6E85A1}</Project>
+      <Name>Cell.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cell.UI\Cell.UI.csproj">
+      <Project>{5EE2EB44-B10D-425A-958C-2F33B1A893A8}</Project>
+      <Name>Cell.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
